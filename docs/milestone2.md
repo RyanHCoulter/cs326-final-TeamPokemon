@@ -30,23 +30,19 @@ Our project is to use the pokemon API and have a strategy web app. The user can 
 
 **Description and images of the user interface your application will intend on supporting.**
 
-<img src="docs/Screen Shot 2020-10-24 at 9.25.34 PM.png"/>
+<img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/MainSearch.png"/>
      
 The image above is the home page that users will see once they first open the application. 
 The purpose and sole action of this page is to type in the enemy that the user is attempting to defeat/learn more about.
 Once typing in the name of the pokemon, it will launch the MyStratDash page which provides more information on the pokemon and possible pokemon you can  use to defeat it. 
      
-<img src="docs/Screen Shot 2020-10-24 at 9.28.09 PM.png"
-     alt="Recruits"
-     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/Recruits.png"/>
      
 The image above is a screenshot of what the recruits page will look like.
 This is a storage system that users can user to keep track of pokemon they should find in order to defeat the enemies they previously searched.
 It provides basic information that the user may want to know, and also has the option to open the pokemons file in the strat dash to learn more about them.
      
-<img src="docs/Screen Shot 2020-10-24 at 9.28.18 PM.png"
-     alt="MyStratDash"
-     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/StratDash.png"/>
      
 The final and most critical page is the Strategy Dashboard. 
 This is where the user can dive deeper into specific pokemon and find all the data that they would need in order to win in battle.
