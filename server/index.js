@@ -10,6 +10,7 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import bodyParser from 'body-parser';
+import path from 'path';
 const app = express();
 const port = 3000;
 
@@ -37,6 +38,22 @@ function getRecents() {
 //The Get/Post Request Declarations
 app.get('/getHistory', async (req, res) => {
   res.send(await getRecents());
+});
+
+app.get('/', async (req, res) => {
+  res.sendFile('client/index.html', { root: path.resolve() });
+});
+
+app.get('/recuits', async (req, res) => {
+  res.sendFile('client/Recuits.html', { root: path.resolve() });
+});
+
+app.get('/dashboard', async (req, res) => {
+  const pokemon = req.query.pokemon;
+  if (pokemon === undefined) {
+    res.send({ error: 'must specify url parameter \'pokemon\'' });
+  }
+  res.sendFile('client/dashboard.html', { root: path.resolve() });
 });
 
 app.post('/getInfo', getInfo);
