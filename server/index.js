@@ -51,7 +51,7 @@ app.get('/', async (req, res) => {
   res.sendFile('client/index.html', { root: path.resolve() });
 });
 
-app.get('/recuits', async (req, res) => {
+app.get('/recruits', async (req, res) => {
   res.sendFile('client/recruits.html', { root: path.resolve() });
 });
 
