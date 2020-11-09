@@ -40,12 +40,19 @@ app.get('/getHistory', async (req, res) => {
   res.send(await getRecents());
 });
 
+app.post('/getInfo', getInfo);
+
+app.post('/debugGetEntry', async (req, res) => {
+  res.send(await getPokemonEntry(req.body.pokemonName));
+});
+
+//Page Navigation
 app.get('/', async (req, res) => {
   res.sendFile('client/index.html', { root: path.resolve() });
 });
 
 app.get('/recuits', async (req, res) => {
-  res.sendFile('client/Recuits.html', { root: path.resolve() });
+  res.sendFile('client/recruits.html', { root: path.resolve() });
 });
 
 app.get('/dashboard', async (req, res) => {
@@ -55,13 +62,6 @@ app.get('/dashboard', async (req, res) => {
   }
   res.sendFile('client/dashboard.html', { root: path.resolve() });
 });
-
-app.post('/getInfo', getInfo);
-
-app.post('/debugGetEntry', async (req, res) => {
-  res.send(await getPokemonEntry(req.body.pokemonName));
-});
-
 
 /**Takes a post request to /getInfo and returns the correct respose (adding to the database as neccesary)
  * @param {object} req Request Info
