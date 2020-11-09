@@ -23,15 +23,15 @@ app.listen(port, () => {
 //Following 3 functions to be implemented by Yichao, see document for details
 //Currently here as placeholders
 function addPokemon(pokemonEntry) {
-  return new Promise(pokemonEntry);
+  return pokemonEntry;
 }
 
 function getPokemon(pokemonName) {
-  return new Promise(pokemonName);
+  return pokemonName;
 }
 
 function getRecents() {
-  return new Promise();
+  return;
 }
 
 //The Get/Post Request Declarations
@@ -42,7 +42,7 @@ app.get('/getHistory', async (req, res) => {
 app.post('/getInfo', getInfo);
 
 app.post('/debugGetEntry', async (req, res) => {
-  res.send(await getPokemonEntry(req.body));
+  res.send(await getPokemonEntry(req.body.pokemonName));
 });
 
 
@@ -53,9 +53,6 @@ app.post('/debugGetEntry', async (req, res) => {
 async function getInfo(req, res) {
   if (req.body.pokemonName === undefined) {
     res.send({ error: 'pokemonName must be set to the desired pokemon\'s name in the body' });
-  }
-  if (!(req.body.pokemonName instanceof String)) {
-    res.send({ error: 'pokemonName must be a string' });
   }
   const info = await getPokemon(req.body.pokemonName);
   if (info === null) {
@@ -70,8 +67,9 @@ async function getInfo(req, res) {
         res.send(await getPokemon(req.body.pokemonName));
       }
     }
+  } else {
+    res.send(info);
   }
-  res.send(info);
 }
 
 /**Returns a Promise for the data at the specified url
