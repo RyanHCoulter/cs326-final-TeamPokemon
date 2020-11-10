@@ -16,8 +16,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
