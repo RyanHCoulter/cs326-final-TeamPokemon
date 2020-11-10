@@ -71,5 +71,4 @@ async function getPokemon(name) {
 async function getRecents() {
     return arr;
 }
-getPokemon("4");
 module.exports={addPokemon,getPokemon,getRecents};
