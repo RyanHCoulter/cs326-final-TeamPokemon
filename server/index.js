@@ -27,6 +27,7 @@ app.listen(port, () => {
 //The Get/Post Request Declarations
 app.get('/getHistory', async (req, res) => {
   res.send(await database.getRecents());
+  console.log("hi");
 });
 
 app.post('/getInfo', getInfo);
@@ -60,13 +61,16 @@ async function getInfo(req, res) {
   if (req.body.pokemonName === undefined) {
     res.send({ error: 'pokemonName must be set to the desired pokemon\'s name in the body' });
   }
-  const info = await database.getPokemon(req.body.pokemonName);
+  const lowercase=req.body.pokemonName.toLowerCase();
+  const info = await database.getPokemon(lowercase);
+  console.log(info);
   if (info === null) {
-    const newInfo = getPokemonEntry(req.body.pokemonName);
+    const newInfo = await getPokemonEntry(req.body.pokemonName);
+    console.log(newInfo);
     if (newInfo.error !== undefined) {
       res.send(newInfo);
     } else {
-      const added = database.addPokemon(newInfo);
+      const added = await database.addPokemon(newInfo);
       if (!added) {
         res.send({ error: 'An error occured adding ' + req.body.pokemonName + '\'s data to the database' });
       } else {
@@ -131,7 +135,7 @@ async function getPokemonEntry(name) {
   const advantageousTypes = await Promise.all(typeInfos
     .reduce((a, e) => a.concat(e.damage_relations.double_damage_from
       .map(x => doFetch(x.url))), []));
-  const enemyList = advantageousTypes
+  const enemyList =(await advantageousTypes)
     .filter(x => !['dark', 'steel', 'fairy'].includes(x.name))
     .reduce((a, e) => a.concat(e.pokemon
       .filter(x => parseInt(x.pokemon.url.substring(34, x.pokemon.url.length - 1)) <= 151)), [])
