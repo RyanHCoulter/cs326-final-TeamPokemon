@@ -12,7 +12,7 @@ window.onload = async () => {
     document.getElementById("l").innerText = data.location[0];
     document.getElementById("w").innerText = "water";
     document.getElementById("a").innerText = data.abilities.splice(0,2);
-    document.getElementById("e").innerText = data.evolutionLine;
+    document.getElementById("e").innerText = data.evolution;
     const [enemy1, enemy2, enemy3] =await Promise.all(data.enemies.slice(0,3).map(enemy=>f.pokeInfo(enemy)));
     document.getElementById("name1").innerText = "View" + " " + enemy1.name;
     document.getElementById("name2").innerText = "View" + " " + enemy2.name;
