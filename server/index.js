@@ -17,7 +17,7 @@ const port = 45145;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${process.env.PORT || port}`);
+  console.log(`Server listening at http://localhost:${port}`);
 });
 
 //Following 3 functions to be implemented by Yichao, see document for details
