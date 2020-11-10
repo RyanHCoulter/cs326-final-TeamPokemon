@@ -1,6 +1,5 @@
 {
     "name": "teampokemon",
-    "type": "module",
     "scripts": {
         "start": "node server/index.js",
         "lint": "eslint server/"
@@ -43,6 +42,7 @@
         "body-parser": "^1.19.0",
         "express": "^4.17.1",
         "node-fetch": "^2.6.1",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "pg-promise": "^10.7.3"
     }
 }

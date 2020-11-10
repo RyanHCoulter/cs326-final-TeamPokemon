@@ -7,12 +7,13 @@
  * @property {string[]} evolutionLine The pokemon's eveloution line (only lists gen 1 eveloutions)
  * @property {string[]} enemies List of pokemon by name who have an advantageous type against this pokemon
  */
-import express from 'express';
-import fetch from 'node-fetch';
-import bodyParser from 'body-parser';
-import path from 'path';
+const database=require('./database.js');
+const express=require('express');
+const fetch=require('node-fetch');
+const bodyParser=require('body-parser');
+const path=require('path');
 const app = express();
-const port = 3000;
+const port = process.env.PORT ||3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -22,23 +23,10 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
-//Following 3 functions to be implemented by Yichao, see document for details
-//Currently here as placeholders
-function addPokemon(pokemonEntry) {
-  return pokemonEntry;
-}
-
-function getPokemon(pokemonName) {
-  return pokemonName;
-}
-
-function getRecents() {
-  return;
-}
 
 //The Get/Post Request Declarations
 app.get('/getHistory', async (req, res) => {
-  res.send(await getRecents());
+  res.send(await database.getRecents());
 });
 
 app.post('/getInfo', getInfo);
@@ -72,17 +60,17 @@ async function getInfo(req, res) {
   if (req.body.pokemonName === undefined) {
     res.send({ error: 'pokemonName must be set to the desired pokemon\'s name in the body' });
   }
-  const info = await getPokemon(req.body.pokemonName);
+  const info = await database.getPokemon(req.body.pokemonName);
   if (info === null) {
     const newInfo = getPokemonEntry(req.body.pokemonName);
     if (newInfo.error !== undefined) {
       res.send(newInfo);
     } else {
-      const added = addPokemon(newInfo);
+      const added = database.addPokemon(newInfo);
       if (!added) {
         res.send({ error: 'An error occured adding ' + req.body.pokemonName + '\'s data to the database' });
       } else {
-        res.send(await getPokemon(req.body.pokemonName));
+        res.send(await database.getPokemon(req.body.pokemonName));
       }
     }
   } else {
