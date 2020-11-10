@@ -16,8 +16,10 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.listen(process.env.PORT || port, () => {
-  console.log(`Server listening at http://localhost:${process.env.PORT || port}`);
+app.use(express.static(path.resolve() + '/client'));
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
 });
 
 //Following 3 functions to be implemented by Yichao, see document for details
@@ -50,7 +52,7 @@ app.get('/', async (req, res) => {
   res.sendFile('client/index.html', { root: path.resolve() });
 });
 
-app.get('/recuits', async (req, res) => {
+app.get('/recruits', async (req, res) => {
   res.sendFile('client/recruits.html', { root: path.resolve() });
 });
 
