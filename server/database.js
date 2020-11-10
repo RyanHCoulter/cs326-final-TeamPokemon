@@ -77,7 +77,24 @@ async function deletePokemon(name){
         return false;
     }
 }
+async function updatePokemon(entry) {
+    try{
+        let imageurl=entry[imageUrl];
+        let type=entry[type].join();
+        let name=entry[name];
+        let location=entry[location].join();
+        let abilities=entry[abilities].join();
+        let evolution=entry[evolutionLine].join();
+        let enemies=entry[enemies].join();
+        deletePokemon(name);
+        await connectAndRun(db => db.none("INSERT INTO pokemon VALUES ($1, $2, $3, $4, $5, $6, $7);", [imageurl, type, name,location,abilities,evolution,enemies]));
+        return true;
+    }
+    catch(e){
+        return false;
+    }
+}
 async function getRecents() {
     return arr;
 }
-module.exports={addPokemon,getPokemon,getRecents,deletePokemon};
+module.exports={addPokemon,getPokemon,getRecents,deletePokemon,updatePokemon};
