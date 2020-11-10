@@ -34,11 +34,13 @@ GET /recuits
 GET /dashboard
 => dashboard.html
 
+We created the ability to Update and Delete, but do not find them necessary for the purposes of our application.
+
 **At least one set of four screenshots of your client interface with descriptions**
 
 <img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/geodude.png"/>
 
-This image is the main page where the client will type in the pokemon they are looking to find. Once they search it will store the pokemon in our database which will be later grabbed when opening the history page. In addition, it will open the dash for that pokemon.
+This image is the main page where the client will type in the pokemon they are looking to find. Once they search it will create the pokemon in our database which will be later grabbed when opening the history page. In addition, it will open the dash for that pokemon.
 
 <img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/geodude_dash.png"/>
 
