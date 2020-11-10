@@ -16,6 +16,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(path.resolve() + '/client'));
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
@@ -51,7 +52,7 @@ app.get('/', async (req, res) => {
   res.sendFile('client/index.html', { root: path.resolve() });
 });
 
-app.get('/recuits', async (req, res) => {
+app.get('/recruits', async (req, res) => {
   res.sendFile('client/recruits.html', { root: path.resolve() });
 });
 
