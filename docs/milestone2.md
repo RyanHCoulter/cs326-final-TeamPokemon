@@ -49,10 +49,30 @@ This is the geodude dashboard that will load. It will have a variety of characte
 
 For exmaple, if mankey was clicked, this would load and the mankey dash and have the same options as before with geodude but now with mankey. 
 
-<img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/history.png"/>
+<img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/history-tab.png"/>
 
 This is the history page which pulls the previous pokemon that have been viewed and displays them in a table with a brief overlay of the information from the dash as well as the option to open the dash again. 
 
 **The URL of your Heroku Application**
 
 Link: https://cs326-final-pokemon.herokuapp.com/
+
+
+**Breakdown of the division of labor**
+
+Frontend Ryan:
+	Fetch calls as necessary: (new file)
+		Post on mainpage
+		Get when going to history page
+		Post from history to dash on entry click
+		Post on enemy click (dash page)
+
+Server DB Calls Yichao:
+	addPokemon(pokemonEntry)=>Promise<boolean>
+	getPokemon(pokemonName)=>Promise<pokemonEntry|null>
+	getRecents()=>Promise<pokemonEntry[]>(ordered descending orderAdded max10)
+	docs/setup.md
+
+Server Kobi:
+	Setup express and call above functions as needed,
+	Get info from pokeApi if not already available
