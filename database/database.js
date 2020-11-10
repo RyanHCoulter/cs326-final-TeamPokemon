@@ -60,3 +60,4 @@ async function getPokemon(name) {
 async function getRecent() {
     return arr;
 }
+module.exports={addPokemon,getPokemon,getRecent};
