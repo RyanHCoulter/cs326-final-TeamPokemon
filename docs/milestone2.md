@@ -54,6 +54,19 @@ For exmaple, if mankey was clicked, this would load and the mankey dash and have
 
 This is the history page which pulls the previous pokemon that have been viewed and displays them in a table with a brief overlay of the information from the dash as well as the option to open the dash again. 
 
+**Database**
+
+imageUrl varchar(100),
+type varchar(100),
+name varchar(100),
+location varchar(100),
+abilities varchar(100),
+evolution varchar(100),e
+nemies varchar(100),
+primary key(name))"
+
+Information stored in our database. We can add pokemon by name. Delete pokemon by name. Update a pokemon entry. Lastly it can be called to return the last 10 (or less) entries which will be shown in the history tab.
+
 **The URL of your Heroku Application**
 
 Link: https://cs326-final-pokemon.herokuapp.com/
