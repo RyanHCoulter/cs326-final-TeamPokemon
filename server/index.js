@@ -12,12 +12,12 @@ import fetch from 'node-fetch';
 import bodyParser from 'body-parser';
 import path from 'path';
 const app = express();
-const port = 45145;
+const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`Server listening at http://localhost:${process.env.PORT || port}`);
 });
 
 //Following 3 functions to be implemented by Yichao, see document for details
