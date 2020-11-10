@@ -38,16 +38,28 @@ async function createtable() {
     await connectAndRun(db => db.none("CREATE TABLE IF NOT EXISTS  pokemon(imageUrl varchar(100),type varchar(100),name varchar(100),location varchar(100),abilities varchar(100),evolution varchar(100),enemies varchar(100),primary key(name))"));
 };
  
-async function addPokemon(imageurl, type, name,location,abilities,evolution,enemies) {
+async function addPokemon(entry) {
+    let imageurl=entry[imageUrl];
+    let type=entry[type].join();
+    let name=entry[name];
+    let location=entry[location].join();
+    let abilities=entry[abilities].join();
+    let evolution=entry[evolutionLine].join();
+    let enemies=entry[enemies].join();
     createtable();
-    return await connectAndRun(db => db.none("INSERT INTO pokemon VALUES ($1, $2, $3, $4, $5, $6, $7);", [imageurl, type, name,location,abilities,evolution,enemies]));
+    await connectAndRun(db => db.none("INSERT INTO pokemon VALUES ($1, $2, $3, $4, $5, $6, $7);", [imageurl, type, name,location,abilities,evolution,enemies]));
+    return true;
 }
-async function getPokemon(name) {
+async function getPokemon(name) {  
     let promise=await connectAndRun(db => db.one("select * from pokemon where name=$1;",name));
+    console.log(promise);
     arr[recent]=promise;
     recent=(recent+1)%10;
     return promise;
 }
 async function getRecent() {
     return arr;
+    console.log(arr);
 }
+getPokemon("s");
+getRecent()
