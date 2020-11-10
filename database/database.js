@@ -59,7 +59,4 @@ async function getPokemon(name) {
 }
 async function getRecent() {
     return arr;
-    console.log(arr);
 }
-getPokemon("s");
-getRecent()
