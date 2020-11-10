@@ -10,6 +10,10 @@ npm install
 npm start
 ```
 
+Can go to node packages and package.json for more details. 
+
+We used the pokemon API to retrieve information/images for the pokemon. 
+
 **Client Folder**
 
 
