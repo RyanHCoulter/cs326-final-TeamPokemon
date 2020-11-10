@@ -1,4 +1,3 @@
-
 'use strict';
 const pgp = require("pg-promise")({
     connect(client) {
@@ -16,8 +15,6 @@ const url = process.env.DATABASE_URL || `postgres://${username}:${password}@loca
 const db = pgp(url);
 var recent=0;
 var arr=[];
-// If you use MongoDB, you will typically have two URLs. You can then use:
-// const url = (process.env.NODE_ENV === "production") ? "MongoDB Atlas URL" : "localhost URL";
 async function connectAndRun(task) {
     let connection = null;
 
