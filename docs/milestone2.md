@@ -9,10 +9,9 @@ Yichao (Ethan) Zhang, yichaozhang99
 
 **A brief and precise representation of APIs for you application:**
 
-API Calls:
-	POST /getInfo
-	body: {pokemonName: string}
-	=> Promise<pokemonEntry|{error:string}>
+POST /getInfo
+body: {pokemonName: string}
+=> Promise<pokemonEntry|{error:string}>
   
   
 GET /getHistory
