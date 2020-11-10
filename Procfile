@@ -1,2 +1,1 @@
-web: npm start
-web: echo hi
+web: node server/index.js
