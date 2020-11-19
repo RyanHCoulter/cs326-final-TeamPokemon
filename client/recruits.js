@@ -1,6 +1,6 @@
 import * as f from "./fetch.js";
 window.onload = async () => {
-    const pokemons =await Promise.all(['pikachu','geodude','charmander'].map(enemy=>f.pokeInfo(enemy)));
+    const pokemons =await Promise.all(['pikachu','geodude','mankey'].map(enemy=>f.pokeInfo(enemy)));
     const history = document.getElementById("history");
     history.innerHTML = '';
     pokemons.forEach(pokemon=>{
