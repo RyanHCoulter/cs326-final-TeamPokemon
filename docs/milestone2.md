@@ -34,11 +34,13 @@ GET /recuits
 GET /dashboard
 => dashboard.html
 
+We created the ability to Update and Delete, but do not find them necessary for the purposes of our application.
+
 **At least one set of four screenshots of your client interface with descriptions**
 
 <img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/geodude.png"/>
 
-This image is the main page where the client will type in the pokemon they are looking to find. Once they search it will store the pokemon in our database which will be later grabbed when opening the history page. In addition, it will open the dash for that pokemon.
+This image is the main page where the client will type in the pokemon they are looking to find. Once they search it will create the pokemon in our database which will be later grabbed when opening the history page. In addition, it will open the dash for that pokemon.
 
 <img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/geodude_dash.png"/>
 
@@ -51,6 +53,19 @@ For exmaple, if mankey was clicked, this would load and the mankey dash and have
 <img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/history-tab.png"/>
 
 This is the history page which pulls the previous pokemon that have been viewed and displays them in a table with a brief overlay of the information from the dash as well as the option to open the dash again. 
+
+**Database**
+
+imageUrl varchar(100),
+type varchar(100),
+name varchar(100),
+location varchar(100),
+abilities varchar(100),
+evolution varchar(100),e
+nemies varchar(100),
+primary key(name))"
+
+Information stored in our database. We can add pokemon by name. Delete pokemon by name. Update a pokemon entry. Lastly it can be called to return the last 10 (or less) entries which will be shown in the history tab.
 
 **The URL of your Heroku Application**
 

@@ -34,7 +34,7 @@ export async function pokeInfo(name) {
         redirect: 'follow'
     };
     
-    let a = fetch("/debugGetEntry", requestOptions)
+    let a = fetch("/getInfo", requestOptions)
         .then(response => response.json())
         .then(result => obj = result)
         .then((result) => {
