@@ -37,6 +37,8 @@ Lastly it can be called to return the last 10 (or less) entries which will be sh
 
 **Kobi:** database logic development and implementation, secrets.json
 
+**Important note:** Jakob may have less commits in github because a major role he played was assisting through shared screens via zoom, so he helped with the code but did not actually commit the changes. 
+
 
 **Google Doc Link**
 
