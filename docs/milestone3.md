@@ -29,6 +29,8 @@ Lastly it can be called to return the last 10 (or less) entries which will be sh
 
 **Division of Labor:**
 
-Ryan: milestone3.md file creation
-Yichao:
-Kobi:
+**Ryan:** milestone3.md file creation, database logic development and partial implementation
+
+**Yichao:** secrets.json, database logic development and partial implementation
+
+**Kobi:** database logic development and partial implementation
