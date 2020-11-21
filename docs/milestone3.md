@@ -12,13 +12,15 @@ Yichao (Ethan) Zhang, yichaozhang99
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
 | imageURL | String    | The URL to get the pokemon image  |
-| type | String   | The pokemons type (fire, water, ground, etc) |
-| name  | String    | The name of the pokemon  |
-| location | Array   | Where to find the pokemon |
-| abilities  | Array    | List of abilities the pokemon can have  |
-| evolutions | Array   | What pokemon it evolves to (if applicable) |
-| enemies  | Array    | Enemeies associated with this pokemon  |
-| Primary key (name) | String   | Name as primary key |
+| type | String   | The pokemons type (fire, water, ground, etc) \* |
+| name  | String    | The name of the pokemon **PRIMARY KEY**  |
+| location | String   | Where to find the pokemon. \* |
+| abilities  | String    | List of abilities the pokemon can have \*  |
+| evolutions | String   | What pokemon it evolves to (if applicable) \* |
+| enemies  | String   | Enemeies associated with this pokemon \*  |
+
+
+\* The string is a comma delimited representation of a string array ('a,b,c')
 
 Information stored in our database is about the pokemon that is searched for. 
 We can add pokemon by name. 
@@ -29,8 +31,13 @@ Lastly it can be called to return the last 10 (or less) entries which will be sh
 
 **Division of Labor:**
 
-**Ryan:** milestone3.md file creation, database logic development and partial implementation
+**Ryan:** milestone3.md file creation, database logic development and partial implementation, secrets.json
 
 **Yichao:** secrets.json, database logic development and implementation
 
-**Kobi:** database logic development and implementation
+**Kobi:** database logic development and implementation, secrets.json
+
+
+**Google Doc Link**
+
+https://docs.google.com/document/d/19ZNJshdDOZC8JR73dwGfCc18sy461omPPFlCWZ_VoPo/edit?usp=sharing
