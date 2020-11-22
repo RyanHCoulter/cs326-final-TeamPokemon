@@ -12,11 +12,11 @@ window.onload = async () => {
         row.appendChild(name);
 
         const type = document.createElement('td');
-        type.innerHTML = pokemon.name;
+        type.innerHTML = pokemon.type;
         row.appendChild(type);
 
         const location = document.createElement('td');
-        location.innerHTML = pokemon.name;
+        location.innerHTML = pokemon.location;
         row.appendChild(location);
 
         const btn = document.createElement('button');
