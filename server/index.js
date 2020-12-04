@@ -27,7 +27,6 @@ app.listen(port, () => {
 //The Get/Post Request Declarations
 app.get('/getHistory', async (req, res) => {
   res.send(await database.getRecents());
-  console.log("hi");
 });
 
 app.post('/getInfo', getInfo);
@@ -63,10 +62,8 @@ async function getInfo(req, res) {
   }
   const lowercase=req.body.pokemonName.toLowerCase();
   const info = await database.getPokemon(lowercase);
-  console.log(info);
   if (info === null) {
     const newInfo = await getPokemonEntry(req.body.pokemonName);
-    console.log(newInfo);
     if (newInfo.error !== undefined) {
       res.send(newInfo);
     } else {
