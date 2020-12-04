@@ -21,10 +21,6 @@ export async function pokeInfo(name) {
     let a = fetch("/getInfo", requestOptions)
         .then(response => response.json())
         .then(result => obj = result)
-        .then((result) => {
-            console.log(result);
-            return result;
-          })
         .catch(error => console.log('error', error));  
     
     return a;
