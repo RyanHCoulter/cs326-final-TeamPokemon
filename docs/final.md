@@ -23,7 +23,7 @@ This is the geodude dashboard that will load. It will have a variety of characte
 
 For example, if mankey was clicked, this would load and the mankey dash and have the same options as before with geodude but now with mankey. 
 
-<img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/history-tab.png"/>
+<img src="https://github.com/RyanHCoulter/cs326-final-TeamPokemon/blob/main/docs/UpdatedRecruits.png"/>
 
 This is the history page which pulls the previous pokemon that have been viewed and displays them in a table with a brief overlay of the information from the dash as well as the option to open the dash again. 
 
